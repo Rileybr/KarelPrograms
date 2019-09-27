@@ -21,6 +21,7 @@ public class RectangleFun {
         Rectangle rectangle = new Rectangle(x, y, width, height);
 
         System.out.println("Perimeter = " + ((rectangle.getHeight() * 2) + (rectangle.getWidth() * 2)));
-        System.out.println("New Location is (" + (rectangle.getX() - 4) + ", " + (rectangle.getY() + 2) + ")");
+        rectangle.setLocation((int) (rectangle.getX() - 4), (int) (rectangle.getY() + 2));
+        System.out.println("New Location is (" + rectangle.getX() + ", " + rectangle.getY() + ")");
     }
 }
