@@ -75,7 +75,41 @@ public class Repair {
 
 
         // Your code goes below.
-        karel.putThing();
+        int counter = 0;
+        boolean clear = false;
+        karel.turnLeft();
+        do {
+            clear = false;
+            if (karel.frontIsClear()){
+                karel.putThing();
+                karel.move();
+                counter ++;
+            }
+            else {
+                karel.putThing();
+                karel.turnLeft();
+                karel.turnLeft();
+                while (counter != 0){
+                    if (counter > 0){
+                        karel.move();
+                        counter--;
+                    }
+                    if (counter == 0){
+                        karel.turnLeft();
+                        karel.move();
+                        karel.move();
+                        karel.move();
+                        karel.move();
+                        karel.turnLeft();
+                        if (karel.frontIsClear()){
+                            clear = true;
+                        }
+                    }
+
+                }
+            }
+        }while (clear = true);
+
 
     }
 }
